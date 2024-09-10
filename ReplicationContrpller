@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp
+spec:
+  replicas: 5
+  selector:
+    kallu : piyush
+  template:
+    metadata:
+      name: myapp
+      labels:
+        kallu : piyush
+    spec:
+      containers:
+        - name: myapp
+          image: nginx
+          ports:
+            - containerPort: 80
